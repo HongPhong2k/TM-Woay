@@ -5,7 +5,7 @@ import LoginPage from "./component/route/Login";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/message">
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/admin" element={<AdminPage />} />
