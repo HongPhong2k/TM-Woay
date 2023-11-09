@@ -1,0 +1,82 @@
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+:root {
+  --color-main: #0984e3;
+}
+
+.price .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 25%;
+  cursor: pointer;
+  float: left;
+}
+.price .main:hover > .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+.price .main:hover > .back {
+  transform: perspective(600px) rotateY(0deg);
+}
+.price .main .front {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 20px;
+  transform: perspective(600px) rotateY(0deg);
+  backface-visibility: hidden;
+  transition: transform 0.5s linear 0s;
+}
+.price .main .front .name {
+  text-align: center;
+  color: var(--color-main);
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.price .main .front .des {
+  text-align: center;
+  margin-top: 10px;
+  color: #828486;
+}
+.price .main .front .pricing {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.price .main .front .img-price {
+  width: 116px;
+  margin: 0 auto;
+}
+.price .main .front .img-price img {
+  width: 100%;
+}
+.price .main .back {
+  position: absolute;
+  transform: perspective(600px) rotateY(180deg);
+  backface-visibility: hidden;
+  transition: transform 0.5s linear 0s;
+}
+.price .main .back .list {
+  display: flex;
+}/*# sourceMappingURL=Price.css.map */

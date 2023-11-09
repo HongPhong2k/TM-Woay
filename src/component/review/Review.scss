@@ -1,0 +1,11 @@
+.row-r {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    .col-r {
+        img {
+            width: 100%;
+        }
+    }
+}
