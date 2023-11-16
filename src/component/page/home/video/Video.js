@@ -2,7 +2,9 @@ import "./Video.scss";
 const Video = () => {
   return (
     <div className="video">
-      <h2>Video hướng dẫn</h2>
+      <div className="css-title">
+        <p className="title">Hướng dẫn sử dụng vòng quay</p>
+      </div>
 
       <iframe
         width="1065"

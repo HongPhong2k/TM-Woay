@@ -1,0 +1,71 @@
+@import '../../css/reset.scss';
+
+:root {
+    --color-main: #0984e3;
+    --bg-header: #ffffff;
+}
+.container-css {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    padding: 20px 0 10px 0;
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-header);
+    box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
+    .content {
+        ////
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        .logo {
+            cursor: pointer;
+            img {
+                width: 60px;
+                border-radius: 50%;
+            }
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+
+            .list {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: black;
+                text-align: center;
+                text-decoration: none;
+                font-size: 17px;
+                border-bottom: 3px solid transparent;
+                text-transform: capitalize;
+                font-weight: 400;
+
+                li {
+                    margin: 0 20px;
+                    cursor: pointer;
+                    padding-bottom: 10px;
+                    border: 3px solid transparent;
+                    &:hover {
+                        border-bottom: 3px solid var(--color-main);
+                        transition: all 0.5s;
+                    }
+                }
+            }
+        }
+        .btn-lienhe {
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: 1px solid var(--color-main);
+            &:hover {
+                transition: 0.5s;
+                background-color: var(--color-main);
+                color: white;
+            }
+        }
+    }
+}

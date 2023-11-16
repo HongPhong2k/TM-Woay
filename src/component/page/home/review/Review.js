@@ -1,10 +1,14 @@
 import "./Review.scss";
-import comment from "../../image/comment.jpg";
+import comment from "../../../../image/comment.jpg";
 import { Divider } from "antd";
-const Review = () => {
+const Review = (props) => {
+  const { handleForm } = props;
   return (
     <>
-      <h2>Phản hồi từ khách hàng</h2>
+      <div className="css-title">
+        <p className="title">Phản hồi từ khách hàng</p>
+      </div>
+
       <div className="row-r">
         <div className="col-r">
           <img src={comment} alt="comment"></img>
@@ -20,7 +24,9 @@ const Review = () => {
         </div>
       </div>
       <div className="center">
-        <div className="now">liên hệ với TM</div>
+        <div className="now" onClick={() => handleForm(true)}>
+          liên hệ với TM
+        </div>
       </div>
       <Divider />
     </>

@@ -1,0 +1,96 @@
+@import '../../css/reset.scss';
+@import '../../css/media.scss';
+:root {
+    --color-main: #0984e3;
+    --color-bg-modal: white;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.formm {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    z-index: 1000;
+    background-color: var(--color-bg-modal);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //width: 30%;
+    width: 420px;
+    border-radius: 20px;
+    opacity: 0;
+    animation: scaleUp 0.5s forwards;
+    &.out {
+        animation: scaleDown 0.5s forwards;
+    }
+    .modal-info {
+        position: relative;
+        padding: 50px 30px 30px 30px;
+        .btn-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 140px;
+            }
+        }
+        .text {
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 500;
+            font-size: 20px;
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .custom-input {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            border-radius: 5px;
+            img {
+                width: 35px;
+                margin-right: 7px;
+            }
+        }
+        .activec {
+            border: 1px solid var(--color-main);
+        }
+        .advise {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleDown {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+}

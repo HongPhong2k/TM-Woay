@@ -1,4 +1,4 @@
-@import '../../css/reset.scss';
+@import '../../../../css/reset.scss';
 .center-p {
     display: flex;
     align-items: center;
@@ -50,6 +50,6 @@
         transform: scale(1);
     }
     to {
-        transform: scale(1.6);
+        transform: scale(1.7);
     }
 }

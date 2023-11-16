@@ -1,10 +1,11 @@
 import { AiTwotonePhone } from "react-icons/ai";
 import "./Contact.scss";
-const Contact = () => {
+const Contact = (props) => {
+  const { handleForm } = props;
   return (
     <div className="contact">
       <div className="center-p">
-        <div className="phone">
+        <div className="phone" onClick={() => handleForm(true)}>
           <AiTwotonePhone />
         </div>
       </div>
