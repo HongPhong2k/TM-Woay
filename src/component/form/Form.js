@@ -10,14 +10,20 @@ import { useEffect, useRef, useState } from "react";
 const FormInfo = (props) => {
   const { handleForm } = props;
   const [active, setActive] = useState({ a1: true });
-
   const refOutside = useRef(null);
+  const refEmail = useRef(null);
+  const refPhone = useRef(null);
   const handleActive = (b) => {
     if (b === "name") setActive({ a1: true });
     if (b === "email") setActive({ a2: true });
     if (b === "phone") setActive({ a3: true });
     if (b === "web") setActive({ a4: true });
   };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [web, setWeb] = useState("");
+
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
   }, []);
@@ -38,6 +44,33 @@ const FormInfo = (props) => {
     setTimeout(() => {
       handleForm(false);
     }, 500);
+  };
+  const isVietnamesePhoneNumber = (number) => {
+    return /(03|05|07|08|09)+([0-9]{8})\b/.test(number);
+  };
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+  const handleSaveForm = (e) => {
+    if (!validateEmail(email)) {
+      console.log("check: ", validateEmail(email));
+      refEmail.current.setCustomValidity("Email không đúng định dạng !");
+      return;
+    } else {
+      refEmail.current.setCustomValidity("");
+    }
+    if (!isVietnamesePhoneNumber(phone)) {
+      refPhone.current.setCustomValidity("Số điện thoại không đúng !");
+      return;
+    } else {
+      refPhone.current.setCustomValidity("");
+    }
+    console.log("api");
+    e.preventDefault();
   };
   return (
     <div className="formm " ref={refOutside}>
@@ -63,7 +96,12 @@ const FormInfo = (props) => {
               onClick={() => handleActive("name")}
             >
               <img src={iconname} alt="anh" />
-              <input type="text" required placeholder=" Họ tên" />
+              <input
+                type="text"
+                required
+                placeholder=" Họ tên"
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
           </div>
           <div className="col-md-12 mt-3">
@@ -72,7 +110,13 @@ const FormInfo = (props) => {
               onClick={() => handleActive("email")}
             >
               <img src={iconemail} alt="anh" />
-              <input type="text" required placeholder=" Email" />
+              <input
+                ref={refEmail}
+                type="text"
+                required
+                placeholder=" Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
           </div>
           <div className="col-md-12 mt-3">
@@ -81,7 +125,13 @@ const FormInfo = (props) => {
               onClick={() => handleActive("phone")}
             >
               <img src={iconphone} alt="anh" />
-              <input type="text" required placeholder=" Số điện thoại" />
+              <input
+                ref={refPhone}
+                type="text"
+                required
+                placeholder=" Số điện thoại"
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </div>
           </div>
           <div className="col-md-12 mt-3">
@@ -90,11 +140,22 @@ const FormInfo = (props) => {
               onClick={() => handleActive("web")}
             >
               <img src={iconweb} alt="anh" />
-              <input type="text" required placeholder=" Website" />
+              <input
+                type="text"
+                required
+                placeholder=" Website"
+                onChange={(e) => setWeb(e.target.value)}
+              />
             </div>
           </div>
           <div className="col-12 mt-5">
-            <button className="btn btn-primary advise" type="submit">
+            <button
+              className="btn btn-primary advise"
+              onClick={(e) => {
+                handleSaveForm(e);
+              }}
+              type="submit"
+            >
               Tư vấn cho tôi
             </button>
           </div>

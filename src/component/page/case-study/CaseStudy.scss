@@ -1,0 +1,93 @@
+@import '../../../css/reset.scss';
+@import '../../../css/media.scss';
+@import url('https://use.fontawesome.com/releases/v5.13.0/css/all.css');
+:root {
+    --color-main: #0984e3;
+}
+.container-css {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-case {
+    padding: 90px 15px 70px;
+    .none {
+        height: 50px;
+    }
+    .title-case {
+        h3 {
+            font-weight: 600;
+            font-size: 35px;
+            margin: 0 auto;
+            letter-spacing: 0.1em;
+            line-height: 1.3;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+    .group-case {
+        width: 70%;
+        margin: 80px auto;
+        .group-anh-case {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .text-quote {
+                z-index: 5;
+                font-size: 20px;
+                font-style: italic;
+                color: white;
+                position: absolute;
+                top: 30%;
+                left: 10%;
+                right: 10%;
+                &:before {
+                    font-family: 'Font Awesome 5 Free';
+                    content: '\f10d';
+                    position: absolute;
+                    top: -40px;
+                    left: -40px;
+                    font-weight: 900;
+                    color: #bcbcbc;
+                    font-size: 30px;
+                }
+                &:after {
+                    font-family: 'Font Awesome 5 Free';
+                    content: '\f10e';
+                    position: absolute;
+                    margin-top: 30px;
+                    font-weight: 900;
+                    color: #bcbcbc;
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .des-case {
+            color: var(--color-main);
+            margin-top: 30px;
+            display: flex;
+            font-weight: 500;
+            text-transform: capitalize;
+            p {
+                margin: unset;
+            }
+        }
+        .des-case-detail {
+            margin-top: 10px;
+            display: flex;
+
+            font-weight: 500;
+            text-transform: capitalize;
+            p {
+                margin: unset;
+            }
+        }
+    }
+}

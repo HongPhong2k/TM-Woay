@@ -27,9 +27,9 @@ const Price = (props) => {
   };
   return (
     <>
-      <div className="css-title">
+      {/* <div className="css-title">
         <p className="title">Bảng giá</p>
-      </div>
+      </div> */}
 
       <div className="roww">
         <div className={a1 ? "main height-more" : "main height-less"}>

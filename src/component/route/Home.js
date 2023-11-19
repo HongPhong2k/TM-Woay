@@ -1,6 +1,5 @@
 import "./Home.scss";
 import banner from "../../image/p8.jpg";
-import { AiTwotonePhone } from "react-icons/ai";
 import Price from "../price/Price";
 import FormInfo from "../form/Form";
 import { useState } from "react";
@@ -19,11 +18,14 @@ const Home = (props) => {
           <div className="main">
             <img className="banner" src={banner} alt="anh"></img>
             <Information />
+            <div className="css-title">
+              <p className="title">Bảng giá</p>
+            </div>
             <Price handleForm={handleForm} />
             <Partner />
             <Video />
             <Review handleForm={handleForm} />
-            <Contact handleForm={handleForm} />
+            {/* <Contact handleForm={handleForm} /> */}
           </div>
         </div>
       </div>
