@@ -31,22 +31,23 @@
         }
     }
     .group-case {
-        width: 70%;
-        margin: 80px auto;
+        margin-bottom: 100px;
         .group-anh-case {
+            width: 100%;
             position: relative;
             img {
                 width: 100%;
+                cursor: pointer;
             }
             .text-quote {
                 z-index: 5;
-                font-size: 20px;
                 font-style: italic;
                 color: white;
                 position: absolute;
                 top: 30%;
                 left: 10%;
                 right: 10%;
+                cursor: pointer;
                 &:before {
                     font-family: 'Font Awesome 5 Free';
                     content: '\f10d';
@@ -55,7 +56,7 @@
                     left: -40px;
                     font-weight: 900;
                     color: #bcbcbc;
-                    font-size: 30px;
+                    font-size: 20px;
                 }
                 &:after {
                     font-family: 'Font Awesome 5 Free';
@@ -64,7 +65,7 @@
                     margin-top: 30px;
                     font-weight: 900;
                     color: #bcbcbc;
-                    font-size: 30px;
+                    font-size: 20px;
                 }
             }
         }
@@ -72,21 +73,15 @@
         .des-case {
             color: var(--color-main);
             margin-top: 30px;
-            display: flex;
             font-weight: 500;
             text-transform: capitalize;
             p {
-                margin: unset;
+                width: 100%;
             }
-        }
-        .des-case-detail {
-            margin-top: 10px;
-            display: flex;
-
-            font-weight: 500;
-            text-transform: capitalize;
-            p {
-                margin: unset;
+            span {
+                color: black;
+                display: inline-block;
+                margin-left: 10px;
             }
         }
     }

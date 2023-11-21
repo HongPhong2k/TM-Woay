@@ -14,10 +14,20 @@ import g2_2 from "../../../image/dich-vu/g2_2.png";
 import g2_3 from "../../../image/dich-vu/g2_3.png";
 import g2_4 from "../../../image/dich-vu/g2_4.png";
 import g2_5 from "../../../image/dich-vu/g2_5.png";
+import g3_1 from "../../../image/dich-vu/g3_1.jpeg";
+import g3_2 from "../../../image/dich-vu/g3_2.jpg";
+import g3_3 from "../../../image/dich-vu/g3_3.jpeg";
+import g3_4 from "../../../image/dich-vu/g3_4.jpg";
+import g3_logo_1 from "../../../image/dich-vu/g3_logo-1.jpg";
+import g3_logo_2 from "../../../image/dich-vu/g3_logo-2.jpg";
+import g3_logo_3 from "../../../image/dich-vu/g3_logo-3.jpg";
+// import g3_logo_4 from "../../../image/dich-vu/"
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { CiStar } from "react-icons/ci";
 import { MdStar } from "react-icons/md";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { useRef } from "react";
+import FormDichVu from "./FormDichVu";
 const responsive = {
   0: { items: 1 },
   568: { items: 2 },
@@ -47,7 +57,7 @@ const responsive_2 = {
 };
 const items_2 = [
   <div className="item" data-value="1" style={{ marginRight: "20px" }}>
-    <div style={{ backgroundColor: "#fff" }}>
+    <div style={{ backgroundColor: "#fff", borderRadius: "10px" }}>
       <div className="image-crs">
         <div className="g2_bg_1">
           <img src={g2_bg_1}></img>
@@ -71,7 +81,7 @@ const items_2 = [
     </div>
   </div>,
   <div className="item" data-value="2" style={{ marginRight: "20px" }}>
-    <div style={{ backgroundColor: "#fff" }}>
+    <div style={{ backgroundColor: "#fff", borderRadius: "10px" }}>
       <div className="image-crs">
         <div className="g2_bg_1">
           <img src={g2_bg_1}></img>
@@ -95,7 +105,7 @@ const items_2 = [
     </div>
   </div>,
   <div className="item" data-value="3" style={{ marginRight: "20px" }}>
-    <div style={{ backgroundColor: "#fff" }}>
+    <div style={{ backgroundColor: "#fff", borderRadius: "10px" }}>
       <div className="image-crs">
         <div className="g2_bg_1">
           <img src={g2_bg_1}></img>
@@ -119,7 +129,7 @@ const items_2 = [
     </div>
   </div>,
   <div className="item" data-value="4" style={{ marginRight: "20px" }}>
-    <div style={{ backgroundColor: "#fff" }}>
+    <div style={{ backgroundColor: "#fff", borderRadius: "10px" }}>
       <div className="image-crs">
         <div className="g2_bg_1">
           <img src={g2_bg_1}></img>
@@ -144,7 +154,7 @@ const items_2 = [
     </div>
   </div>,
   <div className="item" data-value="5" style={{ marginRight: "20px" }}>
-    <div style={{ backgroundColor: "#fff" }}>
+    <div style={{ backgroundColor: "#fff", borderRadius: "10px" }}>
       <div className="image-crs">
         <div className="g2_bg_1">
           <img src={g2_bg_1}></img>
@@ -173,6 +183,11 @@ const contentStyle = {
   height: "100px",
 };
 const DichVuChuyenSau = () => {
+  const refG3Slide = useRef(null);
+
+  const handleNextSlideG3 = () => {
+    refG3Slide.current.next();
+  };
   return (
     <>
       <div className="dichvu">
@@ -326,13 +341,150 @@ const DichVuChuyenSau = () => {
                 items={items_2}
                 responsive={responsive_2}
                 controlsStrategy="alternate"
-                // disableButtonsControls={true}
-                disableDotsControls={true}
-                // autoPlay={true}
-                // autoPlayInterval={3000}
-                // infinite={true}
+                disableButtonsControls={true}
               />
             </div>
+          </div>
+        </div>
+        <div className="group-3">
+          <div className="container-css">
+            <div className="g3-title">
+              Khám phá các chiến dịch Gamification thành công
+            </div>
+            <div className="g3-carousel">
+              <Carousel autoplay={false} dots={false} ref={refG3Slide}>
+                <div>
+                  <div className="row">
+                    <div className="col-md-7">
+                      <img src={g3_1} alt="anh"></img>
+                    </div>
+                    <div className="col-md-5">
+                      <span>quay số nụ cười</span>
+                      <p>
+                        Giải pháp vận hành minigame đồng thời tại 100 cửa hàng
+                        Co.op Smile Đề bài của hoạt động promotion này chính là
+                        việc tối ưu khâu vận hành tại chuỗi 100 cửa hàng của
+                        Co.op Smile cũng như việc đồng bộ dữ liệu, đảm bảo tính
+                        minh bạch trong khâu quản lý kho quà tặng khổng lồ. Với
+                        ưu điểm tích hợp đa thiết bị, giải pháp vòng quay may
+                        mắn của Woay đã vận hành mượt mà không chỉ trên thiết bị
+                        di động mà còn thiết bị sẵn có tại cửa hàng. Điều này
+                        góp phần tạo ra trải nghiệm chơi cực dễ dàng, ngay cả
+                        với khách hàng lớn tuổi.
+                      </p>
+                      <span>
+                        Chi tiết cách Woay “gỡ rối”, bấm XEM CASE STUDY
+                      </span>
+                      <div className="g3-logo">
+                        <img src={g3_logo_1} alt="anh"></img>
+                      </div>
+                      <div className="arrow-slide" onClick={handleNextSlideG3}>
+                        <FaArrowRightLong />
+                      </div>
+                      <div className="btn-g3">Xem chi tiết</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="row">
+                    <div className="col-md-7">
+                      <img src={g3_2} alt="anh"></img>
+                    </div>
+                    <div className="col-md-5">
+                      <span>TRUY TÌM MẢNH GHÉP, SĂN QUÀ THẬT HAY</span>
+                      <p>
+                        Giải pháp góp phần tăng trưởng ứng dụng My Mobiphone
+                        Mượn câu chuyện về hành trình của chú khủng long màu
+                        xanh, My Mobifone đã thành công trong việc thu hút người
+                        dùng tham gia vào chiến dịch truyền thông về gói cước 4G
+                        của Mobifone. Không chỉ đảm bảo mục tiêu tăng nhận diện
+                        thương hiệu, minigame giúp tối ưu hóa các KPI quan trọng
+                        như tỷ lệ giữ chân, số phiên, thời gian hoạt động và cải
+                        thiện trải nghiệm người dùng khi tham gia vào ứng dụng.
+                      </p>
+                      <span>
+                        Chi tiết cách Woay “game hóa”, bấm XEM CASE STUDY.
+                      </span>
+                      <div className="g3-logo">
+                        <img src={g3_logo_2} alt="anh"></img>
+                      </div>
+                      <div className="arrow-slide" onClick={handleNextSlideG3}>
+                        <FaArrowRightLong />
+                      </div>
+                      <div className="btn-g3">Xem chi tiết</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="row">
+                    <div className="col-md-7">
+                      <img src={g3_3} alt="anh"></img>
+                    </div>
+                    <div className="col-md-5">
+                      <span>MÁY GẮP HẠNH PHÚC</span>
+                      <p>
+                        Đối với các chiến dịch lớn trong năm, Co.op Smile luôn
+                        ưu tiên cho mục tiêu tăng tương tác với khách hàng, từ
+                        đó tăng doanh thu dịp cuối năm. Vì vậy, số hóa chiếc
+                        “máy gắp” truyền thuyết trở thành một trò chơi mới lạ mà
+                        thân quen, tác động vào tâm lý tò mò của khách hàng. Kết
+                        lại chương trình, Co.op Smile đạt tỉ lệ tham gia chương
+                        trình tăng 30% so với chương trình khác vào cùng kỳ năm
+                        ngoái.
+                      </p>
+                      <span>
+                        Chi tiết cách Woay “số hóa” máy gắp thú, bấm XEM CASE
+                        STUDY.
+                      </span>
+                      <div className="g3-logo">
+                        <img src={g3_logo_1} alt="anh"></img>
+                      </div>
+                      <div className="arrow-slide" onClick={handleNextSlideG3}>
+                        <FaArrowRightLong />
+                      </div>
+                      <div className="btn-g3">Xem chi tiết</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="row">
+                    <div className="col-md-7">
+                      <img src={g3_4} alt="anh"></img>
+                    </div>
+                    <div className="col-md-5">
+                      <span>QUAY LÀ TRÚNG</span>
+                      <p>
+                        Giải pháp góp phần tăng trưởng ứng dụng The Golden Spoon
+                        Quay là trúng là minigame đầu tiên trên ứng dụng The
+                        Golden Spoon với hàng loạt phần quà cực khủng từ chuỗi
+                        nhà hàng Golden Gate. Với hệ thống nhiệm vụ từ dễ đến
+                        khó, thương hiệu có thể điều hướng hành vi người dùng
+                        trên ứng dụng nhằm đạt mục tiêu của chiến dịch. Không
+                        chỉ đảm bảo mục tiêu tăng nhận diện thương hiệu,
+                        minigame giúp tối ưu hóa các KPI quan trọng như tỷ lệ
+                        giữ chân, số phiên, thời gian hoạt động và cải thiện
+                        trải nghiệm người dùng khi tham gia vào ứng dụng.
+                      </p>
+                      <span>
+                        Chi tiết cách Woay “gỡ rối”, bấm XEM CASE STUDY
+                      </span>
+                      <div className="g3-logo">
+                        <img src={g3_logo_3} alt="anh"></img>
+                      </div>
+                      <div className="arrow-slide" onClick={handleNextSlideG3}>
+                        <FaArrowRightLong />
+                      </div>
+                      <div className="btn-g3">Xem chi tiết</div>
+                    </div>
+                  </div>
+                </div>
+              </Carousel>
+            </div>
+          </div>
+        </div>
+        <div className="group-4">
+          <div className="container-css">
+            <FormDichVu />
           </div>
         </div>
       </div>

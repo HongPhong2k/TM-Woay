@@ -1,0 +1,148 @@
+@import '../../../css/media.scss';
+@import '../../../css/reset.scss';
+
+.container-baiviet {
+    width: 100%;
+    margin: 0 auto;
+}
+.container-css {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.baiviet {
+}
+.none {
+    height: 50px;
+}
+.bg-es {
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .quote-bg {
+        position: absolute;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        &:before {
+            font-family: 'Font Awesome 5 Free';
+            content: '\f10d';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            font-weight: 900;
+            color: #bcbcbc;
+            font-size: 20px;
+        }
+        &:after {
+            font-family: 'Font Awesome 5 Free';
+            content: '\f10e';
+            position: absolute;
+            margin-top: 50px;
+            right: 0;
+            font-weight: 900;
+            color: #bcbcbc;
+            font-size: 20px;
+        }
+    }
+}
+.main-es {
+    width: 60%;
+    margin: 100px auto;
+    p {
+        font-size: 18px;
+    }
+    .title-bv {
+        display: inline-block;
+        font-size: 24px;
+        margin: 10px 0;
+        font-weight: 500;
+    }
+    ul,
+    li {
+        list-style: disc;
+    }
+    .thuonghieu {
+    }
+    .muctieu {
+    }
+}
+.partner {
+    p {
+        text-align: center;
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+}
+
+.bg-create {
+    margin-top: 300px;
+    position: relative;
+    margin-bottom: 130px;
+    .bg-img {
+        background-image: url(https://www.woay.vn/uploads/bg-khoi-tao_1554734800.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 500px;
+        width: 100%;
+    }
+    .box-info-create {
+        width: 60%;
+        position: absolute;
+        top: 20%;
+        left: 15%;
+        width: 500px;
+        margin: 0 auto;
+        .title-create {
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 30px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            letter-spacing: 2px;
+        }
+        .desc-create {
+            margin: 0 auto;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+        }
+    }
+    .box-img-phone {
+        position: absolute;
+        right: 0;
+        top: -20%;
+        img {
+            width: 100%;
+        }
+    }
+    .btn-bg {
+        background-color: #f1c40f;
+        padding: 10px 50px;
+        position: absolute;
+        bottom: 10px;
+        left: 15%;
+        border-radius: 25px;
+        color: white;
+        font-weight: 600;
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            content: '';
+            cursor: pointer;
+            animation: btn-animation 1s ease-out infinite;
+        }
+    }
+}

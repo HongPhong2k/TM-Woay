@@ -1,0 +1,50 @@
+.form-dv {
+    width: 80%;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #333;
+    border-radius: 15px;
+    p {
+        margin: unset;
+        text-align: center;
+
+        &:nth-child(1) {
+            font-weight: 500;
+            color: white;
+            font-size: 30px;
+        }
+        &:nth-last-child(n) {
+            font-weight: 500;
+            font-size: 30px;
+        }
+    }
+    .form-control {
+        border: 3px solid transparent;
+    }
+    .form-control:focus {
+        border: 3px solid var(--color-main);
+        box-shadow: none;
+    }
+    .form-select {
+        border: 3px solid transparent;
+        box-shadow: none;
+    }
+    .form-select:focus {
+        border: 3px solid var(--color-main);
+        box-shadow: none;
+    }
+    input {
+        padding: 8px;
+    }
+    .btn-g4 {
+        padding: 15px 80px;
+        background-color: var(--color-main);
+        color: white;
+        border-radius: 7px;
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 50px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}

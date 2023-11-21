@@ -15,7 +15,7 @@ const Header = (props) => {
     if (k === "a2") setActive({ a2: true });
     if (k === "a3") setActive({ a3: true });
     if (k === "a4") setActive({ a4: true });
-
+    if (k === "a5") setActive({ a5: true });
     navigate(p);
   };
   useLayoutEffect(() => {
@@ -72,6 +72,12 @@ const Header = (props) => {
                 className={active.a4 ? "active-h" : ""}
               >
                 dịch vụ chuyên sâu
+              </li>
+              <li
+                onClick={() => handleNavigate("a5", "blogs")}
+                className={active.a5 ? "active-h" : ""}
+              >
+                Blogs
               </li>
             </div>
           </div>

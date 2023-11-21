@@ -17,6 +17,8 @@ import CaseStudy from "./component/page/case-study/CaseStudy";
 import DichVuChuyenSau from "./component/page/dich vu chuyen sau/DichVuChuyenSau";
 import BangGia from "./component/page/bang gia/BangGia";
 import ScrollToTop from "./component/layout/ScrollTop";
+import Blogs from "./component/page/blogs/Blogs";
+import EsteeLauder from "./component/bai-viet/case-study/EsteeLauder";
 const App = () => {
   const router = createBrowserRouter(
     [
@@ -25,7 +27,6 @@ const App = () => {
         element: <Layout />,
         children: [
           { index: true, element: <Home /> },
-
           {
             path: "/san-pham",
             element: <SanPham />,
@@ -41,6 +42,14 @@ const App = () => {
           {
             path: "dich-vu-chuyen-sau",
             element: <DichVuChuyenSau />,
+          },
+          {
+            path: "blogs",
+            element: <Blogs />,
+          },
+          {
+            path: "/EsteeLauder",
+            element: <EsteeLauder />,
           },
         ],
       },

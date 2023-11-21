@@ -82,7 +82,7 @@ const FormInfo = (props) => {
             viewBox="0 0 384 512"
           ></svg>
         </div>
-        <div className="logo">
+        <div className="logo-modal">
           <img src={logo} alt="anh" />
         </div>
         <div className="text">

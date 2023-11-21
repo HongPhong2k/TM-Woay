@@ -1,0 +1,172 @@
+@import '../../../css/reset.scss';
+@import '../../../css/media.scss';
+:root {
+    --color-main: #0984e3;
+}
+.container-css {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.blogs {
+    padding-bottom: 100px;
+}
+.main-blog {
+    .none {
+        height: 100px;
+    }
+    .box-parent {
+        margin-bottom: 100px;
+        //padding-bottom: 100px;
+        //background-color: red;
+    }
+    .title-blog {
+        margin-top: 60px;
+        margin-bottom: 130px;
+        p {
+            font-size: 35px;
+            font-weight: 500;
+            text-align: center;
+            margin: 0;
+        }
+        span {
+            text-align: center;
+            font-weight: 500;
+            display: block;
+            font-size: 15px;
+            margin-top: 30px;
+        }
+    }
+    .t-row {
+        font-weight: 800;
+        font-size: 25px;
+    }
+    .des-t {
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .btn-t {
+        margin-top: 20px;
+        font-size: 15px;
+        background-color: var(--color-main);
+        border-radius: 25px;
+        padding: 10px 30px;
+        width: fit-content;
+        color: white;
+        cursor: pointer;
+    }
+    img {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .box-blog {
+        box-shadow:
+            rgba(0, 0, 0, 0.12) 0px 1px 3px,
+            rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        cursor: pointer;
+        padding: 0 20px 40px 20px;
+        //overflow: hidden;
+        &:hover {
+            transition: 0.5s;
+            transform: translateY(-5px);
+        }
+        .text-box {
+            font-weight: 700;
+            margin: 20px 0;
+            font-size: 18px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .des-box {
+            font-size: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .bg-create {
+        margin-top: 300px;
+        position: relative;
+        .bg-img {
+            background-image: url(https://www.woay.vn/uploads/bg-khoi-tao_1554734800.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 500px;
+            width: 100%;
+        }
+        .box-info-create {
+            width: 60%;
+            position: absolute;
+            top: 20%;
+            left: 15%;
+            width: 500px;
+            margin: 0 auto;
+            .title-create {
+                color: white;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 30px;
+                margin-bottom: 25px;
+                line-height: 1.5;
+                letter-spacing: 2px;
+            }
+            .desc-create {
+                margin: 0 auto;
+                color: white;
+                font-weight: 600;
+                font-size: 15px;
+                letter-spacing: 1.5px;
+            }
+        }
+        .box-img-phone {
+            position: absolute;
+            right: 0;
+            top: -20%;
+            img {
+                width: 100%;
+            }
+        }
+        .btn-bg {
+            background-color: #f1c40f;
+            padding: 10px 50px;
+            position: absolute;
+            bottom: 10px;
+            left: 15%;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 25px;
+                content: '';
+                cursor: pointer;
+                animation: btn-animation 1s ease-out infinite;
+            }
+        }
+    }
+}
+
+@keyframes btn-animation {
+    0% {
+        border: 2px solid #f1c40f;
+        transform: scale(1);
+        border-radius: 25px;
+    }
+    100% {
+        border: 2px solid #f1c40f;
+        border-radius: 25px;
+        transform: scale(1.3);
+    }
+}

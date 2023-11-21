@@ -112,12 +112,12 @@
     }
     .g2-carousel {
         margin-top: 50px;
+
         .image-crs {
             position: relative;
             height: 170px;
             overflow: hidden;
             border-radius: 10px;
-
             .g2_bg_1 {
                 position: absolute;
                 left: 0;
@@ -158,4 +158,73 @@
             height: 250px;
         }
     }
+}
+.group-3 {
+    background-color: var(--color-bg-ft);
+    padding-top: 50px;
+    .g3-title {
+        font-weight: 700;
+        font-size: 30px;
+        text-align: center;
+    }
+    .g3-carousel {
+        margin-top: 50px;
+        padding: 20px 20px 0px 20px;
+        background-color: white;
+        border-radius: 15px;
+        position: relative;
+        img {
+            width: 100%;
+        }
+        .g3-logo {
+            img {
+                width: 30%;
+            }
+        }
+        span {
+            &:nth-child(1) {
+                color: var(--color-main);
+                font-size: 18px;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-style: italic;
+            }
+            &:nth-last-child(n) {
+                font-weight: 500;
+                font-size: 16px;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+        }
+        p {
+            margin-top: 20px;
+            font-weight: 500;
+            font-style: italic;
+        }
+        .arrow-slide {
+            position: absolute;
+            bottom: 110px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--color-main);
+        }
+        .btn-g3 {
+            background-color: var(--color-main);
+            padding: 10px 60px;
+            border-radius: 7px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            width: fit-content;
+            cursor: pointer;
+            position: absolute;
+            bottom: 40px;
+        }
+    }
+}
+.group-4 {
+    background-color: var(--color-bg-ft);
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 70px;
 }
