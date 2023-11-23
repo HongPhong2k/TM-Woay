@@ -89,7 +89,7 @@ const FormInfo = (props) => {
           <p>Bạn vui lòng điền thông tin để TM </p>
           <p>có thể tư vấn tốt nhất nhé!</p>
         </div>
-        <form className="row ">
+        <form className="row">
           <div className="col-md-12">
             <div
               className={active.a1 ? "activec custom-input" : "custom-input"}
@@ -150,7 +150,7 @@ const FormInfo = (props) => {
           </div>
           <div className="col-12 mt-5">
             <button
-              className="btn btn-primary advise"
+              className="btn btn-primary tuvan"
               onClick={(e) => {
                 handleSaveForm(e);
               }}

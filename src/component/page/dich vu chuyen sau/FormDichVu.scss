@@ -1,9 +1,33 @@
+@import '../../../css/media.scss';
+@import '../../../css/reset.scss';
 .form-dv {
-    width: 80%;
-    margin: 0 auto;
-    padding: 60px;
     background-color: #333;
-    border-radius: 15px;
+
+    @include xs {
+        width: 100%;
+        padding: 50px 10px;
+        margin: 0 auto;
+    }
+    @include sm {
+        width: 95%;
+        margin: 0 auto;
+        padding: 40px;
+        border-radius: 15px;
+    }
+    @include xl {
+        width: 80%;
+        margin: 0 auto;
+        padding: 60px;
+        border-radius: 15px;
+    }
+    .row {
+        @include xs {
+            --bs-gutter-x: 0;
+        }
+        @include sm {
+            --bs-gutter-x: 1.5rem;
+        }
+    }
     p {
         margin: unset;
         text-align: center;
@@ -11,11 +35,17 @@
         &:nth-child(1) {
             font-weight: 500;
             color: white;
-            font-size: 30px;
+            font-size: 32px;
+            @include xs {
+                font-size: 24px;
+            }
         }
         &:nth-last-child(n) {
             font-weight: 500;
-            font-size: 30px;
+            font-size: 32px;
+            @include xs {
+                font-size: 24px;
+            }
         }
     }
     .form-control {
@@ -34,7 +64,28 @@
         box-shadow: none;
     }
     input {
-        padding: 8px;
+        @include xs {
+            padding: 9px;
+            margin-bottom: 10px;
+        }
+        @include sm {
+            margin-bottom: 20px;
+            padding: 12px;
+        }
+    }
+    select {
+        @include xs {
+            margin-bottom: 15px;
+        }
+        @include sm {
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+    }
+    .text-area {
+        @include sm {
+            margin-top: 20px;
+        }
     }
     .btn-g4 {
         padding: 15px 80px;
@@ -46,5 +97,6 @@
         margin-top: 50px;
         font-weight: 500;
         cursor: pointer;
+        font-size: 18px;
     }
 }

@@ -16,8 +16,6 @@
     }
     .box-parent {
         margin-bottom: 100px;
-        //padding-bottom: 100px;
-        //background-color: red;
     }
     .title-blog {
         margin-top: 60px;
@@ -27,6 +25,9 @@
             font-weight: 500;
             text-align: center;
             margin: 0;
+            @include xs {
+                font-size: 24px;
+            }
         }
         span {
             text-align: center;
@@ -34,16 +35,29 @@
             display: block;
             font-size: 15px;
             margin-top: 30px;
+            padding: 10px;
         }
     }
     .t-row {
         font-weight: 800;
         font-size: 25px;
+        @include xs {
+            margin-left: 20px;
+        }
+        @include sm {
+            margin-left: 20px;
+        }
     }
     .des-t {
         margin-top: 20px;
         font-weight: 500;
         font-size: 15px;
+        @include xs {
+            margin-left: 20px;
+        }
+        @include sm {
+            margin-left: 20px;
+        }
     }
     .btn-t {
         margin-top: 20px;
@@ -54,6 +68,14 @@
         width: fit-content;
         color: white;
         cursor: pointer;
+        @include xs {
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+        @include sm {
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
     }
     img {
         width: 60%;

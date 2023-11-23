@@ -18,18 +18,14 @@ const Home = (props) => {
           <div className="main">
             <img className="banner" src={banner} alt="anh"></img>
             <Information />
-            <div className="css-title">
-              <p className="title">Bảng giá</p>
-            </div>
+            <p className="title-home">Bảng giá</p>
             <Price handleForm={handleForm} />
             <Partner />
             <Video />
             <Review handleForm={handleForm} />
-            {/* <Contact handleForm={handleForm} /> */}
           </div>
         </div>
       </div>
-      {/* {isForm && <FormInfo handleForm={handleForm} />} */}
     </>
   );
 };

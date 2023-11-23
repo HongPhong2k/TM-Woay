@@ -1,5 +1,5 @@
 @import '../../css/reset.scss';
-
+@import '../../css/media.scss';
 :root {
     --color-main: #0984e3;
     --bg-header: #ffffff;
@@ -18,30 +18,160 @@
     box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
     animation: slideDown 0.5s ease-in-out;
 }
+.add-box-shadow {
+    box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
+}
 .header {
-    padding: 20px 0 10px 0;
     z-index: 10;
     position: sticky;
     top: 0;
     background-color: var(--bg-header);
-    box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
+    margin-bottom: 50px;
+    @include xs {
+        border-bottom: 1px solid #d2d0d0;
+    }
+    @include sm {
+        border-bottom: 1px solid #d2d0d0;
+    }
 }
-///
-.content-sticky {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-////
+
 .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // padding: 0 100px;
-    padding: 0 50px;
+
+    @include xs {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @include sm {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @include lg {
+        padding: 20px 0 10px 0;
+    }
+    .dot-mb {
+        width: 15%;
+        @include xs {
+            img {
+                width: 30px;
+            }
+        }
+        @include sm {
+            img {
+                width: 40px;
+            }
+        }
+        @include lg {
+            display: none;
+        }
+    }
+    .g-mb-h {
+        display: flex;
+        justify-content: flex-end;
+        width: 85%;
+        @include md {
+            display: none;
+        }
+        .logo-mb {
+            cursor: pointer;
+            @include xs {
+                margin-right: 30px;
+                img {
+                    border-radius: 50%;
+                    width: 45px;
+                }
+            }
+            @include sm {
+                margin-right: 50px;
+                img {
+                    border-radius: 50%;
+                    width: 50px;
+                }
+            }
+        }
+        .btn-lienhe-mb {
+            cursor: pointer;
+            border-radius: 5px;
+            border: 1px solid var(--color-main);
+            font-size: 16px;
+            padding: 6px 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            ///////////////
+            text-transform: capitalize;
+            background-image: linear-gradient(-225deg, #0984e3 0%, #0984e3 29%, #ff1361 67%, #fff800 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+        }
+    }
+    .menu-mb {
+        z-index: 10;
+        position: absolute;
+        background: #fff;
+        @include xs {
+            width: 100%;
+            left: 0;
+            top: 100%;
+        }
+        @include sm {
+            width: 100%;
+            left: 0;
+            top: 100%;
+        }
+        @include md {
+            display: none;
+        }
+        li {
+            padding: 15px 20px;
+            text-transform: capitalize;
+            font-weight: 600;
+            color: #333;
+            &:hover {
+                color: var(--color-main);
+            }
+        }
+        .active-h-mb {
+            border-bottom: 1px solid black;
+        }
+        .btn-menu {
+            padding: 8px 20px;
+            border-radius: 7px;
+            border: 1px solid var(--color-main);
+            width: fit-content;
+            margin: 10px auto;
+            color: var(--color-main);
+            @include sm {
+                font-size: 18px;
+                padding: 12px 30px;
+            }
+        }
+    }
 }
+
 .logo {
     cursor: pointer;
+    @include xs {
+        display: none;
+    }
+    @include sm {
+        display: none;
+    }
+    @include lg {
+        display: block;
+    }
     img {
         width: 60px;
         border-radius: 50%;
@@ -50,7 +180,15 @@
 .menu {
     display: flex;
     align-items: center;
-
+    @include xs {
+        display: none;
+    }
+    @include sm {
+        display: none;
+    }
+    @include lg {
+        display: block;
+    }
     .list {
         display: flex;
         align-items: center;
@@ -65,6 +203,7 @@
         .active-h {
             border-bottom: 3px solid var(--color-main);
         }
+
         li {
             margin-left: 30px;
             cursor: pointer;
@@ -82,11 +221,25 @@
     border-radius: 5px;
     padding: 8px 20px;
     border: 1px solid var(--color-main);
-    color: var(--color-main);
-    &:hover {
-        transition: 0.5s;
-        background-color: var(--color-main);
-        color: white;
+    ///////////////
+    text-transform: capitalize;
+    background-image: linear-gradient(-225deg, #0984e3 0%, #0984e3 29%, #ff1361 67%, #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    @include xs {
+        display: none;
+    }
+    @include sm {
+        display: none;
+    }
+    @include lg {
+        display: block;
     }
 }
 
@@ -96,5 +249,11 @@
     }
     to {
         transform: translateY(0);
+    }
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
     }
 }

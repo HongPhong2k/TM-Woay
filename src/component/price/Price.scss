@@ -10,15 +10,32 @@
 }
 .height-less {
     transition: 0.5s;
-    height: 540px;
+    height: 610px;
+    @include xs {
+        height: 610px;
+    }
 }
 .roww {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 20px;
-
+    @include xs {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 30px;
+        padding: 0px 30px;
+    }
+    @include sm {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 30px;
+        padding: 0px 80px;
+    }
+    @include lg {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px;
+        padding: 0;
+    }
     .main {
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        border: 1px solid #ccc;
         padding: 20px;
         border-radius: 10px;
         position: relative;
@@ -29,16 +46,34 @@
             transform: scale(1.05);
         }
         .name {
-            text-align: center;
             color: var(--color-main);
             font-weight: 600;
             font-size: 24px;
             margin-bottom: 10px;
+            width: fit-content;
+            margin: 0 auto;
+            text-transform: uppercase;
+        }
+        .gr-line {
+            margin-top: 10px;
+            display: flex;
+            .line {
+                height: 2px;
+                width: 100%;
+                margin-right: 3px;
+                background-color: #ccc;
+            }
+            .active-line {
+                background-color: var(--color-main);
+            }
         }
         .des {
             text-align: center;
             margin-top: 10px;
             color: #828486;
+            @include xs {
+                font-size: 14px;
+            }
         }
         .pricing {
             text-align: center;
@@ -58,9 +93,14 @@
             text-align: center;
             border: 1px solid var(--color-main);
             border-radius: 5px;
-            padding: 3px 5px;
+            padding: 5px 5px;
             margin-top: 20px;
             cursor: pointer;
+            font-weight: 600;
+            color: var(--color-main);
+            @include xs {
+                font-size: 16px;
+            }
             &:hover {
                 transition: 0.5s;
                 color: white;

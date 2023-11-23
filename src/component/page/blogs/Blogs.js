@@ -4,7 +4,7 @@ import moingay_2 from "../../../image/blogs/moi-ngay/2.png";
 import moingay_3 from "../../../image/blogs/moi-ngay/3.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
 import parse from "html-react-parser";
 import { useState } from "react";
@@ -13,105 +13,122 @@ const responsive = {
   568: { items: 2 },
   1024: { items: 3 },
 };
-// const items_moingay = [
-//   <div className="item" data-value="1" style={{ marginRight: "20px" }}>
-//     <div className="box-blog">
-//       <img src={moingay_1} alt="anh" />
-//       <div className="text-box">
-//         Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho Burger
-//         King một chuỗi thương hiệu đồ ăn
-//       </div>
-//       <div className="des-box">
-//         Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
-//         sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
-//         hàng phục vụ trên 100 quốc gia khác nhau (2018).
-//       </div>
-//     </div>
-//   </div>,
-//   <div className="item" data-value="2" style={{ marginRight: "20px" }}>
-//     <div className="box-blog">
-//       <img src={moingay_1} alt="anh" />
-//       <div className="text-box">
-//         Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho Burger
-//         King một chuỗi thương hiệu đồ ăn
-//       </div>
-//       <div className="des-box">
-//         Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
-//         sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
-//         hàng phục vụ trên 100 quốc gia khác nhau (2018).
-//       </div>
-//     </div>
-//   </div>,
-//   <div className="item" data-value="3" style={{ marginRight: "20px" }}>
-//     <div className="box-blog">
-//       <img src={moingay_1} alt="anh" />
-//       <div className="text-box">
-//         Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho Burger
-//         King một chuỗi thương hiệu đồ ăn
-//       </div>
-//       <div className="des-box">
-//         Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
-//         sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
-//         hàng phục vụ trên 100 quốc gia khác nhau (2018).
-//       </div>
-//     </div>
-//   </div>,
-//   <div className="item" data-value="4" style={{ marginRight: "20px" }}>
-//     <div className="box-blog">
-//       <img src={moingay_1} alt="anh" />
-//       <div className="text-box">
-//         Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho Burger
-//         King một chuỗi thương hiệu đồ ăn
-//       </div>
-//       <div className="des-box">
-//         Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
-//         sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
-//         hàng phục vụ trên 100 quốc gia khác nhau (2018).
-//       </div>
-//     </div>
-//   </div>,
-//   <div className="item" data-value="5" style={{ marginRight: "20px" }}>
-//     <div className="box-blog">
-//       <img src={moingay_1} alt="anh" />
-//       <div className="text-box">
-//         Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho Burger
-//         King một chuỗi thương hiệu đồ ăn
-//       </div>
-//       <div className="des-box">
-//         Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
-//         sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
-//         hàng phục vụ trên 100 quốc gia khác nhau (2018).
-//       </div>
-//     </div>
-//   </div>,
-//   <div className="item" data-value="6" style={{ marginRight: "20px" }}>
-//     <div className="box-blog">
-//       <img src={moingay_1} alt="anh" />
-//       <div className="text-box">
-//         Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho Burger
-//         King một chuỗi thương hiệu đồ ăn
-//       </div>
-//       <div className="des-box">
-//         Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
-//         sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
-//         hàng phục vụ trên 100 quốc gia khác nhau (2018).
-//       </div>
-//     </div>
-//   </div>,
-// ];
-//console.log("ffffffffff", items_moingay);
+
 const Blogs = () => {
-  const [items_moingay, setItems_moingay] = useState([]);
-  useEffect(() => {
-    let s = "";
-    for (let i = 1; i < 7; i++) {
-      s =
-        s +
-        `<div className="item" data-value="${i}" style={{ marginRight: "20px" }}><div className="box-blog"><img src=${moingay_1} alt="anh" /><div className="text-box">Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho BurgerKing một chuỗi thương hiệu đồ ăn</div><div className="des-box">Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, vớisản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửahàng phục vụ trên 100 quốc gia khác nhau (2018).</div></div></div>`;
-    }
-    setItems_moingay(parse(s));
-    console.log("check arrrrrr", parse(s));
-  }, []);
+  //const [items_moingay, setItems_moingay] = useState([]);
+  const navigate = useNavigate();
+  const items_moingay = [
+    <div className="item" data-value="1" style={{ marginRight: "20px" }}>
+      <div className="box-blog">
+        <img
+          src={moingay_1}
+          alt="anh"
+          onClick={() => navigate("/EsteeLauder")}
+        />
+        <div className="text-box">
+          Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho
+          Burger King một chuỗi thương hiệu đồ ăn
+        </div>
+        <div className="des-box">
+          Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
+          sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
+          hàng phục vụ trên 100 quốc gia khác nhau (2018).
+        </div>
+      </div>
+    </div>,
+    <div className="item" data-value="2" style={{ marginRight: "20px" }}>
+      <div className="box-blog">
+        <img
+          src={moingay_1}
+          alt="anh"
+          onClick={() => navigate("/EsteeLauder")}
+        />
+        <div className="text-box">
+          Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho
+          Burger King một chuỗi thương hiệu đồ ăn
+        </div>
+        <div className="des-box">
+          Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
+          sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
+          hàng phục vụ trên 100 quốc gia khác nhau (2018).
+        </div>
+      </div>
+    </div>,
+    <div className="item" data-value="3" style={{ marginRight: "20px" }}>
+      <div className="box-blog">
+        <img
+          src={moingay_1}
+          alt="anh"
+          onClick={() => navigate("/EsteeLauder")}
+        />
+        <div className="text-box">
+          Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho
+          Burger King một chuỗi thương hiệu đồ ăn
+        </div>
+        <div className="des-box">
+          Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
+          sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
+          hàng phục vụ trên 100 quốc gia khác nhau (2018).
+        </div>
+      </div>
+    </div>,
+    <div className="item" data-value="4" style={{ marginRight: "20px" }}>
+      <div className="box-blog">
+        <img
+          src={moingay_1}
+          alt="anh"
+          onClick={() => navigate("/EsteeLauder")}
+        />
+        <div className="text-box">
+          Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho
+          Burger King một chuỗi thương hiệu đồ ăn
+        </div>
+        <div className="des-box">
+          Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
+          sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
+          hàng phục vụ trên 100 quốc gia khác nhau (2018).
+        </div>
+      </div>
+    </div>,
+    <div className="item" data-value="5" style={{ marginRight: "20px" }}>
+      <div className="box-blog">
+        <img src={moingay_1} alt="anh" />
+        <div className="text-box">
+          Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho
+          Burger King một chuỗi thương hiệu đồ ăn
+        </div>
+        <div className="des-box">
+          Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
+          sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
+          hàng phục vụ trên 100 quốc gia khác nhau (2018).
+        </div>
+      </div>
+    </div>,
+    <div className="item" data-value="6" style={{ marginRight: "20px" }}>
+      <div className="box-blog">
+        <img src={moingay_1} alt="anh" />
+        <div className="text-box">
+          Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho
+          Burger King một chuỗi thương hiệu đồ ăn
+        </div>
+        <div className="des-box">
+          Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, với
+          sản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửa
+          hàng phục vụ trên 100 quốc gia khác nhau (2018).
+        </div>
+      </div>
+    </div>,
+  ];
+  // useEffect(() => {
+  //   let s = "";
+  //   for (let i = 1; i < 7; i++) {
+  //     s =
+  //       s +
+  //       `<div className="item" data-value="${i}" style={{ marginRight: "20px" }}><div className="box-blog"><img src=${moingay_1} alt="anh" /><div className="text-box">Chiến dịch We Love BIG mang về mức tăng trưởng doanh thu 116% cho BurgerKing một chuỗi thương hiệu đồ ăn</div><div className="des-box">Burger King là một chuỗi thương hiệu đồ ăn nhanh nổi tiếng của Mỹ, vớisản phẩm chính là burger. Hiện tại, thương hiệu đang có hơn 17,796 cửahàng phục vụ trên 100 quốc gia khác nhau (2018).</div></div></div>`;
+  //   }
+  //   //setItems_moingay(parse(s));
+  //   //console.log("check arrrrrr", parse(s));
+  // }, []);
 
   const [isForm, handleForm] = useOutletContext();
   return (
@@ -212,7 +229,7 @@ const Blogs = () => {
                 />
               </div>
             </div>
-            <div class="bg-create">
+            {/* <div class="bg-create">
               <div className="bg-img"></div>
               <div class="box-info-create">
                 <h5 class="title-create">
@@ -234,7 +251,7 @@ const Blogs = () => {
               <div class="btn-bg" onClick={() => handleForm(true)}>
                 Tư vấn tạo Game
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

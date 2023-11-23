@@ -37,7 +37,7 @@ const SanPham = () => {
       refName.current.style.border = "1px solid red";
       return;
     } else {
-      refName.current.style.border = "1px solid black";
+      refName.current.style.border = "1px solid #ccc";
     }
     if (!validateEmail(email)) {
       setCheck(true);
@@ -45,7 +45,7 @@ const SanPham = () => {
       refEmail.current.style.border = "1px solid red";
       return;
     } else {
-      refEmail.current.style.border = "1px solid black";
+      refEmail.current.style.border = "1px solid #ccc";
     }
     if (!isVietnamesePhoneNumber(phone)) {
       setCheck(true);
@@ -53,7 +53,7 @@ const SanPham = () => {
       refPhone.current.style.border = "1px solid red";
       return;
     } else {
-      refPhone.current.style.border = "1px solid black";
+      refPhone.current.style.border = "1px solid #ccc";
     }
   };
   return (
@@ -109,7 +109,7 @@ const SanPham = () => {
             </div>
             <div className="form-sp">
               <div className="row d-flex align-items-center">
-                <div className="col-lg-3">
+                <div className="col-lg-3 mt-3">
                   <input
                     ref={refName}
                     type="text"
@@ -119,7 +119,7 @@ const SanPham = () => {
                   ></input>
                 </div>
 
-                <div className="col-lg-3">
+                <div className="col-lg-3 mt-3">
                   <input
                     ref={refEmail}
                     type="text"
@@ -128,7 +128,7 @@ const SanPham = () => {
                     onChange={(e) => setEmail(e.target.value)}
                   ></input>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-3 mt-3">
                   <input
                     ref={refPhone}
                     type="text"
@@ -149,6 +149,7 @@ const SanPham = () => {
                 <img
                   src="https://www.woay.vn/uploads/ezgif_1698461869.com-gif-maker.gif"
                   alt="ezgif 1698461869.com gif maker"
+                  width={"100%"}
                 />
               </div>
               <div className="col-lg-5">
@@ -184,6 +185,7 @@ const SanPham = () => {
                 <img
                   src="https://www.woay.vn/uploads/ezgif_1698461215.com-video-to-gif_(1).gif"
                   alt="ezgif 1698461215.com video to gif (1)"
+                  width={"100%"}
                 />
               </div>
               <div className="col-lg-5">
@@ -219,6 +221,7 @@ const SanPham = () => {
                 <img
                   src="https://www.woay.vn/uploads/da-dang-tich-hop.gif"
                   alt="da dang tich hop"
+                  width={"100%"}
                 />
               </div>
               <div className="col-lg-5">

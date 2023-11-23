@@ -109,8 +109,10 @@ const FormDichVu = () => {
     <>
       <div className="form-dv">
         <p>Bạn đã sẵn sàng sở hữu chiến dịch lôi cuốn hơn?</p>
-        <p style={{ color: "var(--color-main)" }}>Hãy thảo luận cùng TM!</p>
-        <div className="row mb-4 mt-5">
+        <p style={{ color: "var(--color-main)", marginBottom: "50px" }}>
+          Hãy thảo luận cùng TM!
+        </p>
+        <div className="row">
           <div className="col-md-6">
             <input
               type="text"
@@ -130,7 +132,7 @@ const FormDichVu = () => {
             ></input>
           </div>
         </div>
-        <div className="row mb-4">
+        <div className="row">
           <div className="col-md-6">
             <input
               type="text"
@@ -150,7 +152,7 @@ const FormDichVu = () => {
             ></input>
           </div>
         </div>
-        <div className="row mb-4">
+        <div className="row">
           <div className="col-md-6">
             <select
               class="form-select"
@@ -180,7 +182,7 @@ const FormDichVu = () => {
               <option value="4">trên 100 triệu</option>
             </select>
           </div>
-          <div class="mt-4">
+          <div className="text-area">
             <textarea
               class="form-control"
               id="exampleFormControlTextarea1"

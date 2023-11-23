@@ -1,6 +1,14 @@
-.partner {
-    .logo {
+@import '../../../../css/media.scss';
+@import '../../../../css/reset.scss';
+.partner-home {
+    .logo-partner {
         margin: 0 auto;
-        max-width: 1170px;
+
+        @include xs {
+            width: 100%;
+        }
+        @include sm {
+            width: 100%;
+        }
     }
 }

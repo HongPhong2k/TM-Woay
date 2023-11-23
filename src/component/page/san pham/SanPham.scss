@@ -10,7 +10,7 @@
 }
 
 .main-sp {
-    padding: 90px 15px 70px;
+    padding: 90px 15px 30px;
     .none {
         height: 50px;
     }
@@ -23,13 +23,20 @@
             line-height: 1.3;
             max-width: 850px;
             text-align: center;
+            padding: 5px;
+            @include xs {
+                font-size: 20px;
+            }
         }
         p {
             text-align: center;
             font-size: 15px;
             font-weight: 500;
             max-width: 650px;
-            margin: 50px auto;
+            margin: 30px auto;
+            @include xs {
+                font-size: 13px;
+            }
         }
     }
     .des-sp {
@@ -39,11 +46,21 @@
             gap: 10px;
             justify-content: center;
             padding: 0 80px;
+            @include xs {
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 10px;
+                justify-content: space-between;
+                padding: 0;
+            }
             .box-sp {
                 text-align: center;
                 img {
                     width: 100%;
                     height: 150px;
+                    @include xs {
+                        height: 90px;
+                    }
                 }
                 p {
                     margin-top: 40px;
@@ -56,7 +73,7 @@
     .form-sp {
         margin-top: 50px;
         .form-control {
-            border: 1px solid black;
+            border: 1px solid #ccc;
         }
         .form-control:focus {
             border: 1px solid var(--color-main);
@@ -73,6 +90,9 @@
             border-radius: 7px;
             text-align: center;
             color: white;
+            @include xs {
+                margin: 20px auto;
+            }
         }
     }
     h4 {
@@ -80,17 +100,27 @@
         font-size: 30px;
         margin-top: 50px;
         padding-bottom: 40px;
+        font-weight: 800;
+        line-height: 1.7;
     }
     .t1 {
         margin: 0;
         font-weight: 600;
         font-size: 25px;
+        @include xs {
+            font-size: 20px;
+            padding: 10px 10px 0 10px;
+        }
     }
     .t2 {
         max-width: 380px;
         font-weight: 600;
         font-size: 25px;
         color: var(--color-main);
+        @include xs {
+            font-size: 20px;
+            padding-left: 10px;
+        }
     }
     .list-feature {
         display: flex;

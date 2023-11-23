@@ -5,9 +5,7 @@ const Review = (props) => {
   const { handleForm } = props;
   return (
     <>
-      <div className="css-title">
-        <p className="title">Phản hồi từ khách hàng</p>
-      </div>
+      <p className="title-home">Phản hồi từ khách hàng</p>
 
       <div className="row-r">
         <div className="col-r">

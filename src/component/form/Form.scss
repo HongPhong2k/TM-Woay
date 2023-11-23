@@ -17,16 +17,28 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 420px;
+    //width: 420px;
     border-radius: 20px;
     opacity: 0;
     animation: scaleUp 0.5s forwards;
     &.out {
         animation: scaleDown 0.5s forwards;
     }
+    @include xs {
+        width: 90%;
+    }
+    @include sm {
+        width: 80%;
+    }
+    @include md {
+        width: 420px;
+    }
     .modal-info {
         position: relative;
-        padding: 50px 30px 30px 30px;
+        padding: 50px 20px 40px 20px;
+        .row {
+            --bs-gutter-x: 0;
+        }
         .btn-close {
             position: absolute;
             top: 10px;
@@ -37,14 +49,23 @@ p {
             display: flex;
             justify-content: center;
             img {
-                width: 140px;
+                // width: 140px;
+                @include xs {
+                    width: 90px;
+                }
+                @include sm {
+                    width: 140px;
+                }
             }
         }
         .text {
             margin: 20px 0;
             text-align: center;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 20px;
+            @include xs {
+                font-size: 15px;
+            }
             p {
                 margin: 0;
                 padding: 0;
@@ -53,9 +74,11 @@ p {
         .custom-input {
             display: flex;
             align-items: center;
+            justify-content: center;
             border: 1px solid #ccc;
             padding: 8px 10px;
             border-radius: 5px;
+
             input {
                 width: 100%;
             }
@@ -67,9 +90,12 @@ p {
         .activec {
             border: 1px solid var(--color-main);
         }
-        .advise {
+        .tuvan {
             width: 100%;
             text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 8px 0;
         }
     }
 }

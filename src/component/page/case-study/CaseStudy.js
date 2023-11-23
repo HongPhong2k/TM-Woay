@@ -37,9 +37,6 @@ const CaseStudy = () => {
                     >
                       Với chương trình khuyến mãi áp dụng tại mọi điểm bán trên
                       toàn quốc, Envy Apple đã lựa chọn game Vòng quay may mắn
-                      cùng các tính năng giúp chiến dịch marketing bán lẻ được
-                      vận hành trơn tru khiến khách hàng hào hứng tham gia và
-                      đạt những kết quả tích cực
                     </p>
                   </div>
                   <div className="des-case">
@@ -60,8 +57,15 @@ const CaseStudy = () => {
               <div className="col-md-6">
                 <div className="group-case">
                   <div className="group-anh-case">
-                    <img src={anh1} alt="anh"></img>
-                    <p className="text-quote">
+                    <img
+                      src={anh1}
+                      alt="anh"
+                      onClick={() => navigate("/EsteeLauder")}
+                    ></img>
+                    <p
+                      className="text-quote"
+                      onClick={() => navigate("/EsteeLauder")}
+                    >
                       Với chương trình khuyến mãi áp dụng tại mọi điểm bán trên
                       toàn quốc, Envy Apple đã lựa chọn game Vòng quay may mắn
                       cùng các tính năng giúp chiến dịch marketing bán lẻ được
@@ -89,8 +93,15 @@ const CaseStudy = () => {
               <div className="col-md-6">
                 <div className="group-case">
                   <div className="group-anh-case">
-                    <img src={anh1} alt="anh"></img>
-                    <p className="text-quote">
+                    <img
+                      src={anh1}
+                      alt="anh"
+                      onClick={() => navigate("/EsteeLauder")}
+                    ></img>
+                    <p
+                      className="text-quote"
+                      onClick={() => navigate("/EsteeLauder")}
+                    >
                       Với chương trình khuyến mãi áp dụng tại mọi điểm bán trên
                       toàn quốc, Envy Apple đã lựa chọn game Vòng quay may mắn
                       cùng các tính năng giúp chiến dịch marketing bán lẻ được
@@ -116,8 +127,15 @@ const CaseStudy = () => {
               <div className="col-md-6">
                 <div className="group-case">
                   <div className="group-anh-case">
-                    <img src={anh1} alt="anh"></img>
-                    <p className="text-quote">
+                    <img
+                      src={anh1}
+                      alt="anh"
+                      onClick={() => navigate("/EsteeLauder")}
+                    ></img>
+                    <p
+                      className="text-quote"
+                      onClick={() => navigate("/EsteeLauder")}
+                    >
                       Với chương trình khuyến mãi áp dụng tại mọi điểm bán trên
                       toàn quốc, Envy Apple đã lựa chọn game Vòng quay may mắn
                       cùng các tính năng giúp chiến dịch marketing bán lẻ được

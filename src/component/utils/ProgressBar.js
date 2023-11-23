@@ -28,7 +28,7 @@ const ProgressBar = () => {
       //   zIndex: "100",
       // }}
       style={{
-        height: "3px",
+        height: "2px",
         width: "100%",
         position: "absolute",
         bottom: "0",

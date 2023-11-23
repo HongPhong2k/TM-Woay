@@ -1,16 +1,67 @@
+@import '../../../../css/media.scss';
+@import '../../../../css/reset.scss';
 .information {
-    #more {
-        display: none;
-    }
-    .view-more {
-        cursor: pointer;
-    }
     .row {
         display: flex;
         align-items: center;
         justify-content: center;
-        img {
-            width: 100%;
+        @include xs {
+            --bs-gutter-x: 0;
+        }
+        @include sm {
+            --bs-gutter-x: 0;
+        }
+        .img-info {
+            img {
+                width: 100%;
+            }
+            @include xs {
+                padding: 30px;
+            }
+        }
+        .box-info {
+            @include xs {
+                padding: 20px;
+            }
+            @include sm {
+                padding: 20px;
+            }
+            h3 {
+                font-weight: 800;
+                @include xs {
+                    margin-top: 20px;
+                    font-size: 18px;
+                }
+                @include sm {
+                }
+            }
+            p {
+                margin-top: 20px;
+                color: #606163;
+
+                @include xs {
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                @include sm {
+                    width: 90%;
+                }
+            }
+        }
+
+        .anh-mb {
+            @include xs {
+                display: block;
+            }
+            @include sm {
+                display: none;
+            }
+        }
+        .anh-pc {
+            @include xs {
+                display: none;
+            }
         }
     }
 }

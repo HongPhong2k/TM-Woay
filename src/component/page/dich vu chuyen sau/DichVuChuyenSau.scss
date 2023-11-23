@@ -11,7 +11,7 @@
 
 .main-dv {
     .none {
-        height: 120px;
+        height: 100px;
     }
     .banner-dv {
         padding: 60px 0;
@@ -19,10 +19,25 @@
             width: 100%;
             line-height: 1.5;
             font-size: 38px;
+            font-weight: 600;
+            @include xs {
+                font-size: 24px;
+                padding-left: 20px;
+            }
+            @include sm {
+                padding-left: 20px;
+            }
             .carousel-dv {
+                @include sm {
+                    width: 70%;
+                }
                 p {
                     font-size: 38px;
                     color: var(--color-main);
+                    margin: 0;
+                    @include xs {
+                        font-size: 24px;
+                    }
                 }
             }
         }
@@ -38,6 +53,9 @@
             font-weight: 700;
             font-size: 30px;
             margin-bottom: 30px;
+            @include xs {
+                font-size: 24px;
+            }
         }
     }
 }
@@ -45,19 +63,28 @@
 .group-1 {
     background-color: var(--color-bg-ft);
     margin-top: 50px;
-    padding: 100px 0 50px 0;
-
+    padding: 100px 15px 50px 15px;
+    .row {
+        --bs-gutter-x: 0;
+    }
     .g1 {
         .g1-title {
             font-weight: 700;
             font-size: 30px;
+            @include xs {
+                font-size: 24px;
+                margin-left: 10px;
+            }
         }
+
         .g1-list {
+            margin: 0 auto;
             .item {
                 padding: 15px;
                 border: 1px solid var(--color-main);
                 border-radius: 15px;
-                margin-bottom: 20px;
+                margin: 20px auto;
+
                 .title-i {
                     display: flex;
                     align-items: center;
@@ -83,6 +110,9 @@
                         font-size: 20px;
                         color: var(--color-main);
                         font-weight: 500;
+                        @include xs {
+                            font-size: 16px;
+                        }
                     }
                 }
                 .des {
@@ -92,7 +122,6 @@
         }
         .btn-dv {
             background-color: var(--color-main);
-            padding: 15px 80px;
             border-radius: 7px;
             width: fit-content;
             color: white;
@@ -100,19 +129,35 @@
             font-size: 18px;
             font-weight: 500;
             margin-top: 70px;
+            @include xs {
+                font-size: 16px;
+                padding: 10px 80px;
+                margin: 50px auto;
+            }
+            @include sm {
+                padding: 15px 80px;
+                margin: 50px auto;
+            }
         }
     }
 }
 .group-2 {
     background-color: var(--color-bg-ft);
     padding-top: 50px;
+
     .g2-title {
         font-weight: 700;
         font-size: 30px;
+        @include xs {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+        @include sm {
+            margin-left: 10px;
+        }
     }
     .g2-carousel {
         margin-top: 50px;
-
         .image-crs {
             position: relative;
             height: 170px;
@@ -152,10 +197,12 @@
             font-size: 20px;
         }
         .des-crs {
-            padding-bottom: 100px;
             font-weight: 500;
             padding: 15px;
             height: 250px;
+            @include xs {
+                height: 200px;
+            }
         }
     }
 }
@@ -166,6 +213,10 @@
         font-weight: 700;
         font-size: 30px;
         text-align: center;
+        padding: 10px;
+        @include xs {
+            font-size: 24px;
+        }
     }
     .g3-carousel {
         margin-top: 50px;
@@ -201,6 +252,14 @@
             font-weight: 500;
             font-style: italic;
         }
+        .g3-box {
+            @include xs {
+                padding-bottom: 150px;
+            }
+            @include sm {
+                padding-bottom: 150px;
+            }
+        }
         .arrow-slide {
             position: absolute;
             bottom: 110px;
@@ -219,6 +278,9 @@
             cursor: pointer;
             position: absolute;
             bottom: 40px;
+            @include xs {
+                font-size: 16px;
+            }
         }
     }
 }
@@ -226,5 +288,5 @@
     background-color: var(--color-bg-ft);
     padding-top: 100px;
     padding-bottom: 50px;
-    margin-bottom: 70px;
+    margin-bottom: 10px;
 }

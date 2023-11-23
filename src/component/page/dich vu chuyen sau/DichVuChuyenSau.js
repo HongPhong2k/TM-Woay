@@ -29,8 +29,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { useRef } from "react";
 import FormDichVu from "./FormDichVu";
 const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
+  0: { items: 3 },
+  568: { items: 4 },
   1024: { items: 5 },
 };
 const items = [
@@ -180,7 +180,7 @@ const items_2 = [
   </div>,
 ];
 const contentStyle = {
-  height: "100px",
+  //height: "50px",
 };
 const DichVuChuyenSau = () => {
   const refG3Slide = useRef(null);
@@ -200,6 +200,7 @@ const DichVuChuyenSau = () => {
                   <h3 className="text-banner">
                     Bạn đã sẵn sàng
                     <Carousel
+                      dots={false}
                       autoplay
                       autoplaySpeed={3000}
                       className="carousel-dv"
@@ -253,7 +254,7 @@ const DichVuChuyenSau = () => {
         <div className="group-1">
           <div className="container-css">
             <div className="row">
-              <div className="g1 col-md-7">
+              <div className="g1 col-xs-12 col-md-7">
                 <p className="g1-title">
                   Dễ dàng đạt được mục tiêu chiến dịch với Gamification.
                 </p>
@@ -324,7 +325,7 @@ const DichVuChuyenSau = () => {
                 </div>
                 <div className="btn-dv">Tư vấn chuyên sâu</div>
               </div>
-              <div className="g1 col-md-5">
+              <div className="g1 col-xs-12 col-md-5">
                 <img src={g1} alt="anh" width={"100%"}></img>
               </div>
             </div>
@@ -355,10 +356,10 @@ const DichVuChuyenSau = () => {
               <Carousel autoplay={false} dots={false} ref={refG3Slide}>
                 <div>
                   <div className="row">
-                    <div className="col-md-7">
+                    <div className="col-xs-12 col-md-7">
                       <img src={g3_1} alt="anh"></img>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-xs-12 col-md-5 g3-box">
                       <span>quay số nụ cười</span>
                       <p>
                         Giải pháp vận hành minigame đồng thời tại 100 cửa hàng
@@ -367,10 +368,8 @@ const DichVuChuyenSau = () => {
                         Co.op Smile cũng như việc đồng bộ dữ liệu, đảm bảo tính
                         minh bạch trong khâu quản lý kho quà tặng khổng lồ. Với
                         ưu điểm tích hợp đa thiết bị, giải pháp vòng quay may
-                        mắn của Woay đã vận hành mượt mà không chỉ trên thiết bị
-                        di động mà còn thiết bị sẵn có tại cửa hàng. Điều này
-                        góp phần tạo ra trải nghiệm chơi cực dễ dàng, ngay cả
-                        với khách hàng lớn tuổi.
+                        mắn của Woay đã vận hành mượt màiệm chơi cực dễ dàng,
+                        ngay cả với khách hàng lớn tuổi.
                       </p>
                       <span>
                         Chi tiết cách Woay “gỡ rối”, bấm XEM CASE STUDY
@@ -381,16 +380,18 @@ const DichVuChuyenSau = () => {
                       <div className="arrow-slide" onClick={handleNextSlideG3}>
                         <FaArrowRightLong />
                       </div>
-                      <div className="btn-g3">Xem chi tiết</div>
+                      <div className="center">
+                        <div className="btn-g3">Xem chi tiết</div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div>
                   <div className="row">
-                    <div className="col-md-7">
+                    <div className="col-xs-12 col-md-7">
                       <img src={g3_2} alt="anh"></img>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-xs-12 col-md-5 g3-box">
                       <span>TRUY TÌM MẢNH GHÉP, SĂN QUÀ THẬT HAY</span>
                       <p>
                         Giải pháp góp phần tăng trưởng ứng dụng My Mobiphone
@@ -399,8 +400,7 @@ const DichVuChuyenSau = () => {
                         dùng tham gia vào chiến dịch truyền thông về gói cước 4G
                         của Mobifone. Không chỉ đảm bảo mục tiêu tăng nhận diện
                         thương hiệu, minigame giúp tối ưu hóa các KPI quan trọng
-                        như tỷ lệ giữ chân, số phiên, thời gian hoạt động và cải
-                        thiện trải nghiệm người dùng khi tham gia vào ứng dụng.
+                        như tỷ lệ giữ chân,
                       </p>
                       <span>
                         Chi tiết cách Woay “game hóa”, bấm XEM CASE STUDY.
@@ -411,16 +411,18 @@ const DichVuChuyenSau = () => {
                       <div className="arrow-slide" onClick={handleNextSlideG3}>
                         <FaArrowRightLong />
                       </div>
-                      <div className="btn-g3">Xem chi tiết</div>
+                      <div className="center">
+                        <div className="btn-g3">Xem chi tiết</div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div>
                   <div className="row">
-                    <div className="col-md-7">
+                    <div className="col-xs-12 col-md-7">
                       <img src={g3_3} alt="anh"></img>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-xs-12 col-md-5 g3-box">
                       <span>MÁY GẮP HẠNH PHÚC</span>
                       <p>
                         Đối với các chiến dịch lớn trong năm, Co.op Smile luôn
@@ -442,16 +444,18 @@ const DichVuChuyenSau = () => {
                       <div className="arrow-slide" onClick={handleNextSlideG3}>
                         <FaArrowRightLong />
                       </div>
-                      <div className="btn-g3">Xem chi tiết</div>
+                      <div className="center">
+                        <div className="btn-g3">Xem chi tiết</div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div>
                   <div className="row">
-                    <div className="col-md-7">
+                    <div className="col-xs-12 col-md-7">
                       <img src={g3_4} alt="anh"></img>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-xs-12 col-md-5 g3-box">
                       <span>QUAY LÀ TRÚNG</span>
                       <p>
                         Giải pháp góp phần tăng trưởng ứng dụng The Golden Spoon
@@ -459,11 +463,7 @@ const DichVuChuyenSau = () => {
                         Golden Spoon với hàng loạt phần quà cực khủng từ chuỗi
                         nhà hàng Golden Gate. Với hệ thống nhiệm vụ từ dễ đến
                         khó, thương hiệu có thể điều hướng hành vi người dùng
-                        trên ứng dụng nhằm đạt mục tiêu của chiến dịch. Không
-                        chỉ đảm bảo mục tiêu tăng nhận diện thương hiệu,
-                        minigame giúp tối ưu hóa các KPI quan trọng như tỷ lệ
-                        giữ chân, số phiên, thời gian hoạt động và cải thiện
-                        trải nghiệm người dùng khi tham gia vào ứng dụng.
+                        trên ứng dụng nhằm đạt mục tiêu của chiến dịch.
                       </p>
                       <span>
                         Chi tiết cách Woay “gỡ rối”, bấm XEM CASE STUDY
@@ -474,7 +474,9 @@ const DichVuChuyenSau = () => {
                       <div className="arrow-slide" onClick={handleNextSlideG3}>
                         <FaArrowRightLong />
                       </div>
-                      <div className="btn-g3">Xem chi tiết</div>
+                      <div className="center">
+                        <div className="btn-g3">Xem chi tiết</div>
+                      </div>
                     </div>
                   </div>
                 </div>

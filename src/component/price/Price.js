@@ -27,13 +27,15 @@ const Price = (props) => {
   };
   return (
     <>
-      {/* <div className="css-title">
-        <p className="title">Bảng giá</p>
-      </div> */}
-
       <div className="roww">
         <div className={a1 ? "main height-more" : "main height-less"}>
           <div className="name">Starter</div>
+          <div className="gr-line">
+            <div className="line active-line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
           <div className="des">
             Khởi sự kinh doanh Online. Tăng nhận diện và tương tác.
           </div>
@@ -111,6 +113,12 @@ const Price = (props) => {
 
         <div className={a2 ? "main height-more" : "main height-less"}>
           <div className="name">Pro</div>
+          <div className="gr-line">
+            <div className="line active-line"></div>
+            <div className="line active-line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
           <div className="des">
             Khởi sự kinh doanh Online. Tăng nhận diện và tương tác.
           </div>
@@ -188,6 +196,12 @@ const Price = (props) => {
 
         <div className={a3 ? "main height-more" : "main height-less"}>
           <div className="name">Starter</div>
+          <div className="gr-line">
+            <div className="line active-line"></div>
+            <div className="line active-line"></div>
+            <div className="line active-line"></div>
+            <div className="line"></div>
+          </div>
           <div className="des">
             Khởi sự kinh doanh Online. Tăng nhận diện và tương tác.
           </div>
@@ -264,6 +278,12 @@ const Price = (props) => {
         </div>
         <div className={a4 ? "main height-more" : "main height-less"}>
           <div className="name">By Request</div>
+          <div className="gr-line">
+            <div className="line active-line"></div>
+            <div className="line active-line"></div>
+            <div className="line active-line"></div>
+            <div className="line active-line"></div>
+          </div>
           <div className="des">
             Khởi sự kinh doanh Online. Tăng nhận diện và tương tác.
           </div>

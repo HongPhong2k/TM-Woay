@@ -8,8 +8,11 @@ const BangGia = () => {
       <div className="bang-gia">
         <div className="container-css">
           <div className="title-bg">
-            <p>Tăng độ nhận diện thương hiệu và tăng doanh số</p>
-            <p>với nền tảng thiết kế của TM</p>
+            <p>
+              Tăng độ nhận diện thương hiệu và tăng doanh số với nền tảng thiết
+              kế của TM
+            </p>
+            {/* <p>với nền tảng thiết kế của TM</p> */}
           </div>
           <div className="btn-dangki">
             <div className="text" onClick={() => handleForm(true)}>
