@@ -67,6 +67,23 @@
     .row {
         --bs-gutter-x: 0;
     }
+    img {
+        width: 100%;
+    }
+    .anh-add {
+        @include xs {
+            display: none;
+        }
+        @include sm {
+            display: none;
+        }
+        @include md {
+            display: block;
+        }
+        @include lg {
+            display: none;
+        }
+    }
     .g1 {
         .g1-title {
             font-weight: 700;
@@ -137,6 +154,10 @@
             @include sm {
                 padding: 15px 80px;
                 margin: 50px auto;
+            }
+            @include xl {
+                padding: 15px 80px;
+                margin: unset;
             }
         }
     }

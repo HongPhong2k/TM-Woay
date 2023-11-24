@@ -1,46 +1,110 @@
 import "./Footer.scss";
 import { FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const [isList, setList] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="footer">
       <div className="container-css">
-        <div className="main">
-          <div className="row">
+        <div className="main-f">
+          <div className="row d-flex justify-content-between">
             <div className="col-xs-12 col-lg-4">
               <div className="title-f">Thông tin về chủ sở hữu website</div>
               <div className="des-f">
-                <p>Tên công ty: CÔNG TY CỔ PHẦN WOAY</p>
-                <p>
+                <p>Tên công ty: CÔNG TY TNHH CÔNG NGHỆ TM SOFTWARE</p>
+                {/* <p>
                   Giấy ĐKKD số 0316704274 do Sở KHĐT TP.HCM cấp lần đầu ngày
                   03/02/2021
-                </p>
-                <p>
-                  Địa chỉ đăng ký kinh doanh: Tầng 3, ACM Building, 96 Cao
-                  Thắng, Phường 4, Quận 3, Thành phố Hồ Chí Minh
-                </p>
-                <p>
-                  Số tài khoản: 123456789 - Ngân hàng TMCP Kỹ thương Việt Nam
-                  (Techcombank)
-                </p>
-                <p>Copyright © 2019 WOAY. All Rights Reserved.</p>
+                </p> */}
+                <p>Địa chỉ: 5/2A Đường 112, Phường Phước Long A, TP.Thủ Đức</p>
+                <p>Hotline: 0979.193.037 - 0979.249.222</p>
+                <p>Copyright © 2019 TM. All Rights Reserved.</p>
               </div>
             </div>
 
-            <div className="col-xs-12 col-lg-4">
+            <div className="col-xs-12 col-lg-5">
               <div className="title-f">Hỗ trợ</div>
               <div className="des-f">
                 <p>
-                  Địa chỉ: Tầng 3, 451/24/4 Tô Hiến Thành, P.14, Q.10, Tp. HCM
+                  VP.HCM: Sky 9, 61-63 Đường số 1, Phường Phú Hữu, TP.Thủ Đức,
+                  Tp.Hồ Chí Minh.
                 </p>
-                <p>Hotline: 0898884169</p>
-                <p>Email: support@woay.vn</p>
-                <p>Website: https://www.woay.vn</p>
+                <p>Hotline: 0979 249 222</p>
+                <p>
+                  VP.Bình Dương: Đường DX38, P.Phú Chánh, Tân Uyên, Bình Dương
+                </p>
+                <p>Hotline: 0979 193 037</p>
+                <p>
+                  {/* <FontAwesomeIcon
+                    icon={faEnvelope}
+                    style={{ marginRight: "5px" }}
+                  /> */}
+                  Email:
+                  <a
+                    href="mailto:info.tmsoftware.vn@gmail.com"
+                    className="email-f"
+                  >
+                    info.tmsoftware.vn@gmail.com
+                  </a>
+                </p>
+
+                <p>
+                  {/* <FontAwesomeIcon
+                    icon={faGlobe}
+                    style={{ marginRight: "5px" }}
+                  /> */}
+                  Website:
+                  <span
+                    className="web"
+                    onClick={() =>
+                      window.open("https://tmsoftware.vn", "_blank")
+                    }
+                  >
+                    https://tmsoftware.vn
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div className="col-xs-12 col-lg-3 ">
+              <div className="title-f">Thông tin khác</div>
+              <div className="des-f">
+                <div className="box-tm footer-3">
+                  <p className="t-tm" onClick={() => setList(!isList)}>
+                    về TM{" "}
+                    <MdKeyboardArrowDown
+                      style={{
+                        fontSize: "25px",
+                      }}
+                    />
+                  </p>
+                  <div
+                    className="dropdown-f"
+                    style={isList ? { display: "block" } : { display: "none" }}
+                  >
+                    <li onClick={() => navigate("/san-pham")}>sản phẩm</li>
+                    <li onClick={() => navigate("/bang-gia")}>bảng giá</li>
+                    <li onClick={() => navigate("/case-study")}>case study</li>
+                    <li onClick={() => navigate("/dich-vu-chuyen-sau")}>
+                      dịch vụ chuyên sâu
+                    </li>
+                    <li onClick={() => navigate("/blogs")}>blogs</li>
+                  </div>
+                </div>
+
                 <FaFacebook
                   style={{
                     marginRight: "15px",
                     fontSize: "20px",
                     cursor: "pointer",
                   }}
+                  className="icon-f"
                 />
                 <FaYoutube
                   style={{
@@ -48,6 +112,7 @@ const Footer = () => {
                     fontSize: "20px",
                     cursor: "pointer",
                   }}
+                  className="icon-f"
                 />
                 <FaTiktok
                   style={{
@@ -55,15 +120,8 @@ const Footer = () => {
                     fontSize: "20px",
                     cursor: "pointer",
                   }}
+                  className="icon-f"
                 />
-              </div>
-            </div>
-
-            <div className="col-xs-12 col-lg-4">
-              <div className="title-f">Thông tin khác</div>
-              <div className="des-f">
-                <p>về TM</p>
-                <p></p>
               </div>
             </div>
           </div>

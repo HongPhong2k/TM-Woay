@@ -18,16 +18,27 @@
     position: relative;
     img {
         width: 100%;
+        @include xs {
+            width: 100vw;
+            height: 60vh;
+            object-fit: cover;
+        }
     }
     .quote-bg {
-        position: absolute;
+        z-index: 5;
         font-style: italic;
-        font-weight: 500;
-        font-size: 25px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         color: white;
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        right: 10%;
+        cursor: pointer;
+        @include xs {
+            font-size: 15px;
+        }
+        @include md {
+            font-size: 15px;
+        }
         &:before {
             font-family: 'Font Awesome 5 Free';
             content: '\f10d';
@@ -37,22 +48,51 @@
             font-weight: 900;
             color: #bcbcbc;
             font-size: 20px;
+            @include xs {
+                font-size: 15px;
+                top: -20px;
+                left: -20px;
+            }
+            @include md {
+                font-size: 15px;
+                top: -20px;
+                left: -10px;
+            }
         }
         &:after {
             font-family: 'Font Awesome 5 Free';
             content: '\f10e';
             position: absolute;
-            margin-top: 50px;
-            right: 0;
+            margin-top: 30px;
             font-weight: 900;
             color: #bcbcbc;
             font-size: 20px;
+            @include xs {
+                font-size: 15px;
+                margin-top: 20px;
+            }
+            @include sm {
+                font-size: 15px;
+                margin-top: 10px;
+            }
         }
     }
 }
 .main-es {
-    width: 60%;
-    margin: 100px auto;
+    @include xs {
+        width: 100%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+    @include sm {
+        width: 100%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+    @include xl {
+        width: 60%;
+        margin: 100px auto;
+    }
     p {
         font-size: 18px;
     }
@@ -67,6 +107,11 @@
         list-style: disc;
     }
     .thuonghieu {
+        img {
+            width: 100%;
+            max-width: 700px;
+            max-height: 400px;
+        }
     }
     .muctieu {
     }
@@ -83,14 +128,32 @@
 
 .bg-create {
     margin-top: 300px;
+    @include xs {
+        margin: 0;
+        padding: 10px;
+    }
+    @include sm {
+        margin-top: 200px;
+        padding: 10px;
+    }
     position: relative;
-    margin-bottom: 130px;
     .bg-img {
         background-image: url(https://www.woay.vn/uploads/bg-khoi-tao_1554734800.svg);
         background-size: contain;
         background-repeat: no-repeat;
-        height: 500px;
         width: 100%;
+        @include xs {
+            display: none;
+        }
+        @include sm {
+            height: 290px;
+        }
+        @include lg {
+            height: 400px;
+        }
+        @include xl {
+            height: 500px;
+        }
     }
     .box-info-create {
         width: 60%;
@@ -99,6 +162,15 @@
         left: 15%;
         width: 500px;
         margin: 0 auto;
+        @include xs {
+            position: static;
+            width: 100%;
+            background-color: var(--color-main);
+            padding: 20px;
+        }
+        @include sm {
+            left: 7%;
+        }
         .title-create {
             color: white;
             font-weight: 900;
@@ -107,6 +179,14 @@
             margin-bottom: 25px;
             line-height: 1.5;
             letter-spacing: 2px;
+            @include xs {
+                font-size: 20px;
+                text-align: center;
+            }
+            @include sm {
+                font-size: 20px;
+                width: 60%;
+            }
         }
         .desc-create {
             margin: 0 auto;
@@ -114,12 +194,54 @@
             font-weight: 600;
             font-size: 15px;
             letter-spacing: 1.5px;
+            @include sm {
+                display: none;
+            }
+            @include lg {
+                display: block;
+            }
+            @include xl {
+                display: block;
+            }
+        }
+        .btn-bg-mb {
+            background-color: var(--color-main);
+            padding: 5px 20px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            position: relative;
+            width: fit-content;
+            margin: 30px auto;
+            @include sm {
+                display: none;
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 25px;
+                content: '';
+                cursor: pointer;
+                animation: btn-animation-mb 1s ease-out infinite;
+            }
         }
     }
     .box-img-phone {
         position: absolute;
         right: 0;
         top: -20%;
+        @include xs {
+            display: none;
+        }
+        @include sm {
+            width: 50%;
+        }
+        @include xl {
+            width: 50%;
+        }
         img {
             width: 100%;
         }
@@ -143,6 +265,12 @@
             content: '';
             cursor: pointer;
             animation: btn-animation 1s ease-out infinite;
+        }
+        @include xs {
+            display: none;
+        }
+        @include sm {
+            font-size: 18px;
         }
     }
 }

@@ -196,7 +196,7 @@ const DichVuChuyenSau = () => {
             <div className="none"></div>
             <div className="banner-dv">
               <div className="row">
-                <div className="col-md-6 d-flex align-items-center">
+                <div className="col-lg-6 d-flex align-items-center">
                   <h3 className="text-banner">
                     Bạn đã sẵn sàng
                     <Carousel
@@ -228,7 +228,7 @@ const DichVuChuyenSau = () => {
                     Bằng Gamification Marketing?
                   </h3>
                 </div>
-                <div className="col-md-6 img-banner">
+                <div className="col-lg-6 img-banner">
                   <img src={banner}></img>
                 </div>
               </div>
@@ -325,8 +325,9 @@ const DichVuChuyenSau = () => {
                 </div>
                 <div className="btn-dv">Tư vấn chuyên sâu</div>
               </div>
-              <div className="g1 col-xs-12 col-md-5">
-                <img src={g1} alt="anh" width={"100%"}></img>
+              <div className="col-xs-12 col-md-5 g1">
+                <img src={g1} alt="anh"></img>
+                <img src={g1} alt="anh" className="anh-add"></img>
               </div>
             </div>
           </div>

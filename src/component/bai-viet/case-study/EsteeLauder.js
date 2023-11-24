@@ -10,8 +10,8 @@ import logo5 from "../../../image/vong quay da thiet ke3.jpg";
 import { useOutletContext } from "react-router-dom";
 
 const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
+  0: { items: 3 },
+  568: { items: 3 },
   1024: { items: 5 },
 };
 const items = [
@@ -57,9 +57,7 @@ const EsteeLauder = () => {
               </p>
               <img
                 src="https://library.woay.io/public/article-images/b4995a0d-bd36-4ae3-8bc4-e7db297dbb95.webp"
-                width="700"
-                height="400"
-                alt=""
+                alt="anh"
               ></img>
             </div>
             <div className="muctieu">
@@ -184,15 +182,18 @@ const EsteeLauder = () => {
           <div class="bg-create">
             <div className="bg-img"></div>
             <div class="box-info-create">
-              <h5 class="title-create">
+              <p class="title-create">
                 TẠO CHIẾN DỊCH GAMIFICATION THU HÚT CHỈ TRONG 5 PHÚT
-              </h5>
+              </p>
               <p class="desc-create">
                 Nền tảng WOAY giúp bạn tạo chiến dịch gamification chỉ trong 5
                 phút, với hơn 60 skin game đẹp và đa dạng ngành hàng có sẵn.
                 Đăng ký nhận tư vấn từ chuyên gia của chúng tôi để thiết kế
                 chiến dịch phù hợp nhất với doanh nghiệp của bạn.
               </p>
+              <div class="btn-bg-mb" onClick={() => handleForm(true)}>
+                Tư vấn tạo Game
+              </div>
             </div>
             <div class="box-img-phone">
               <img
@@ -204,6 +205,7 @@ const EsteeLauder = () => {
               Tư vấn tạo Game
             </div>
           </div>
+          <div className="none"></div>
         </div>
       </div>
     </>

@@ -9,6 +9,9 @@
 }
 .blogs {
     padding-bottom: 100px;
+    @include xs {
+        padding-bottom: 0;
+    }
 }
 .main-blog {
     .none {
@@ -116,13 +119,32 @@
     }
     .bg-create {
         margin-top: 300px;
+        @include xs {
+            margin: 0;
+            padding: 10px;
+        }
+        @include sm {
+            margin-top: 200px;
+            padding: 10px;
+        }
         position: relative;
         .bg-img {
             background-image: url(https://www.woay.vn/uploads/bg-khoi-tao_1554734800.svg);
             background-size: contain;
             background-repeat: no-repeat;
-            height: 500px;
             width: 100%;
+            @include xs {
+                display: none;
+            }
+            @include sm {
+                height: 290px;
+            }
+            @include lg {
+                height: 400px;
+            }
+            @include xl {
+                height: 500px;
+            }
         }
         .box-info-create {
             width: 60%;
@@ -131,6 +153,15 @@
             left: 15%;
             width: 500px;
             margin: 0 auto;
+            @include xs {
+                position: static;
+                width: 100%;
+                background-color: var(--color-main);
+                padding: 20px;
+            }
+            @include sm {
+                left: 7%;
+            }
             .title-create {
                 color: white;
                 font-weight: 900;
@@ -139,6 +170,14 @@
                 margin-bottom: 25px;
                 line-height: 1.5;
                 letter-spacing: 2px;
+                @include xs {
+                    font-size: 20px;
+                    text-align: center;
+                }
+                @include sm {
+                    font-size: 20px;
+                    width: 60%;
+                }
             }
             .desc-create {
                 margin: 0 auto;
@@ -146,12 +185,54 @@
                 font-weight: 600;
                 font-size: 15px;
                 letter-spacing: 1.5px;
+                @include sm {
+                    display: none;
+                }
+                @include lg {
+                    display: block;
+                }
+                @include xl {
+                    display: block;
+                }
+            }
+            .btn-bg-mb {
+                background-color: var(--color-main);
+                padding: 5px 20px;
+                border-radius: 25px;
+                color: white;
+                font-weight: 600;
+                position: relative;
+                width: fit-content;
+                margin: 30px auto;
+                @include sm {
+                    display: none;
+                }
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 25px;
+                    content: '';
+                    cursor: pointer;
+                    animation: btn-animation-mb 1s ease-out infinite;
+                }
             }
         }
         .box-img-phone {
             position: absolute;
             right: 0;
             top: -20%;
+            @include xs {
+                display: none;
+            }
+            @include sm {
+                width: 50%;
+            }
+            @include xl {
+                width: 50%;
+            }
             img {
                 width: 100%;
             }
@@ -176,6 +257,12 @@
                 cursor: pointer;
                 animation: btn-animation 1s ease-out infinite;
             }
+            @include xs {
+                display: none;
+            }
+            @include sm {
+                font-size: 18px;
+            }
         }
     }
 }
@@ -190,5 +277,17 @@
         border: 2px solid #f1c40f;
         border-radius: 25px;
         transform: scale(1.3);
+    }
+}
+@keyframes btn-animation-mb {
+    0% {
+        border: 2px solid white;
+        transform: scale(0.9);
+        border-radius: 25px;
+    }
+    100% {
+        border: 2px solid white;
+        border-radius: 25px;
+        transform: scale(1.1);
     }
 }

@@ -1,6 +1,6 @@
 import "./Header.scss";
 import logo from "../../image/logoTMS.jpg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useLayoutEffect, useState } from "react";
 import ProgressBar from "../utils/ProgressBar";
 import { useEffect } from "react";
@@ -12,15 +12,24 @@ const Header = (props) => {
   const [scrollPosition, setPosition] = useState(0);
   const [active, setActive] = useState({});
   const [openMenuMb, setOpenMenuMb] = useState(false);
+  const location = useLocation();
+  console.log("check locaition: ", location.pathname);
   const handleNavigate = (k, p) => {
     setOpenMenuMb(false);
-    if (k === "a1") setActive({ a1: true });
-    if (k === "a2") setActive({ a2: true });
-    if (k === "a3") setActive({ a3: true });
-    if (k === "a4") setActive({ a4: true });
-    if (k === "a5") setActive({ a5: true });
+    // if (k === "a1") setActive({ a1: true });
+    // if (k === "a2") setActive({ a2: true });
+    // if (k === "a3") setActive({ a3: true });
+    // if (k === "a4") setActive({ a4: true });
+    // if (k === "a5") setActive({ a5: true });
     navigate(p);
   };
+  useEffect(() => {
+    if (location.pathname === "/san-pham") setActive({ a1: true });
+    if (location.pathname === "/bang-gia") setActive({ a2: true });
+    if (location.pathname === "/case-study") setActive({ a3: true });
+    if (location.pathname === "/dich-vu-chuyen-sau") setActive({ a4: true });
+    if (location.pathname === "/blogs") setActive({ a5: true });
+  }, [location.pathname]);
   useLayoutEffect(() => {
     function updatePosition() {
       setPosition(window.scrollY);

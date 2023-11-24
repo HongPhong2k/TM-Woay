@@ -229,18 +229,21 @@ const Blogs = () => {
                 />
               </div>
             </div>
-            {/* <div class="bg-create">
+            <div class="bg-create">
               <div className="bg-img"></div>
               <div class="box-info-create">
-                <h5 class="title-create">
+                <p class="title-create">
                   TẠO CHIẾN DỊCH GAMIFICATION THU HÚT CHỈ TRONG 5 PHÚT
-                </h5>
+                </p>
                 <p class="desc-create">
                   Nền tảng WOAY giúp bạn tạo chiến dịch gamification chỉ trong 5
                   phút, với hơn 60 skin game đẹp và đa dạng ngành hàng có sẵn.
                   Đăng ký nhận tư vấn từ chuyên gia của chúng tôi để thiết kế
                   chiến dịch phù hợp nhất với doanh nghiệp của bạn.
                 </p>
+                <div class="btn-bg-mb" onClick={() => handleForm(true)}>
+                  Tư vấn tạo Game
+                </div>
               </div>
               <div class="box-img-phone">
                 <img
@@ -251,7 +254,7 @@ const Blogs = () => {
               <div class="btn-bg" onClick={() => handleForm(true)}>
                 Tư vấn tạo Game
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

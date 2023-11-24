@@ -31,6 +31,9 @@ p {
         width: 80%;
     }
     @include md {
+        width: 65%;
+    }
+    @include xl {
         width: 420px;
     }
     .modal-info {
@@ -54,6 +57,12 @@ p {
                     width: 90px;
                 }
                 @include sm {
+                    width: 140px;
+                }
+                @include lg {
+                    width: 100px;
+                }
+                @include xl {
                     width: 140px;
                 }
             }

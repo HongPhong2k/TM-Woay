@@ -15,7 +15,15 @@
         height: 50px;
     }
     .row {
-        --bs-gutter-x: 0;
+        @include xs {
+            --bs-gutter-x: 0;
+        }
+        @include sm {
+            --bs-gutter-x: 0;
+        }
+        @include md {
+            --bs-gutter-x: 1.5rem;
+        }
     }
 
     .title-case {
@@ -52,6 +60,10 @@
                     height: 300px;
                     object-fit: cover;
                 }
+                @include sm {
+                    height: 300px;
+                    object-fit: cover;
+                }
             }
             .text-quote {
                 z-index: 5;
@@ -63,6 +75,9 @@
                 right: 10%;
                 cursor: pointer;
                 @include xs {
+                    font-size: 15px;
+                }
+                @include md {
                     font-size: 15px;
                 }
                 &:before {
@@ -79,6 +94,11 @@
                         top: -20px;
                         left: -20px;
                     }
+                    @include md {
+                        font-size: 15px;
+                        top: -20px;
+                        left: -10px;
+                    }
                 }
                 &:after {
                     font-family: 'Font Awesome 5 Free';
@@ -91,6 +111,10 @@
                     @include xs {
                         font-size: 15px;
                         margin-top: 20px;
+                    }
+                    @include sm {
+                        font-size: 15px;
+                        margin-top: 10px;
                     }
                 }
             }
